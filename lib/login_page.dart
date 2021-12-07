@@ -63,15 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                           : 'Registration failed'),
                 ),
               ),
-              Container(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  alignment: Alignment.center,
-                  child: TextButton(
-                    onPressed: () {
-                      verifyPhoneNumber();
-                    },
-                    child: const Text("Verify number"),
-                  )),
 
             ],
           ),
@@ -108,16 +99,4 @@ class _LoginPageState extends State<LoginPage> {
       _success = false;
     }
   }
-
-  verifyPhoneNumber() async {
-    await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: '+91 9770 855 576',
-      verificationCompleted: (PhoneAuthCredential credential) {},
-      verificationFailed: (FirebaseAuthException e) {},
-      codeSent: (String verificationId, int? resendToken) {},
-      codeAutoRetrievalTimeout: (String verificationId) {},
-    );
-  }
-
-
 }

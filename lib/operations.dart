@@ -86,7 +86,7 @@ class _FirebaseOperationState extends State<FirebaseOperation> {
                       Center(
                         child: TextButton(
                           onPressed: () {
-                            //
+                            deleteDb(docId:snapshot.data!.docs[0].id );
                           },
                           child: const Text('delete'),
                         ),
